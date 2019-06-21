@@ -1,7 +1,7 @@
 import socket
 import select
 import sys
-from mcpi.util import flatten_parameters_to_bytestring
+from .util import flatten_parameters_to_bytestring
 
 """ @author: Aron Nieminen, Mojang AB"""
 
@@ -31,6 +31,7 @@ class Connection:
     def send(self, f, *data):
         """
         Sends data. Note that a trailing newline '\n' is added here
+
         The protocol uses CP437 encoding - https://en.wikipedia.org/wiki/Code_page_437
         which is mildly distressing as it can't encode all of Unicode.
         """
